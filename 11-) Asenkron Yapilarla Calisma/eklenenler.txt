@@ -1,0 +1,4 @@
+dbHelper içine veritabanını oluşturmaya yarıyan fonksiyonu yazdık asenkron biçimde yani arka planda veritabanı işlemleri uygulamadan bağımsız bir şekilde yapılacak
+oluşturulan database yolunu alıp değişkende sakladık.
+sonra bu yolu kullanarak databaseyi açtık eğer database yoksa createDb fonksiyonu ile oluşturduk
+createDb içinde tablo oluşturma sorgusu çalıştırdık

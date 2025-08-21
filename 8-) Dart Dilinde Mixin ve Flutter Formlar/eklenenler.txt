@@ -1,0 +1,5 @@
+add_student kısmına 2 tane constructor eklendi ve student listesi oraya bağlandı
+student classına boş bir constructor eklendi
+add butonu için ana sayfa düzenlendi
+formlar eklendi
+buton eklenip kaydedilmesi sağlandı

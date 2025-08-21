@@ -1,0 +1,12 @@
+							--2. video--
+
+card ve product dosyaları oluşturuldu, temel içerik ve constructorları yazıldı. product_api_service.dart dosyası oluşturup içinden jsondan çekilen veriler ile product listesini doldurduk. cart_service.dart içinde de temel işlevleri yazdık. sepete ekleme, çıkarma, listeleme gibi. internal ve singleton kullandık. 1 tane örnek oluşturup sürekli onu kullanmayı sağladık.
+
+							--3. video--
+
+javadaki business katmanı gibi bir şey. veriler ile ilgili işlemi yapıp ekrana veren katman burası. cart_blocs.dart dosyasında 
+cartStreamController isimli değişken ile CartService içinde yapılan işlemleri burada çağırıp işlemin ardından tekrardan yayına geçip ekranı güncelleyen fonksiyonlar yazdık. Bu fonksiyonları da ekranda görüntü üretirken kullanacağız.Aynı işlemleri product_bloc oluşturup onun için de yaptık
+
+							--4. video--
+
+ekranları yaptık ve içinde verileri kullandık.

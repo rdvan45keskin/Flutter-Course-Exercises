@@ -1,0 +1,37 @@
+							1. video
+product.dart dosyasına toMap fonksiyonu eklendi bu sayede kolon adına değer verilebilecek
+ve Product.fromObject adlı constructor eklendi bu sayede dict yapıda olan veriler normal veriye çevrilebilecek
+dbHelper.dart dosyasına tablodaki tüm verileri getirebilen getProducts, insert, update ve delete fonksiyonları eklendi. 
+
+getProducts = tabloyu sorgulayıp sütun adları ve verileri map türünde getiriyor ve bu veriler list.generate kullanılarak sonuçların uzunluğu kadar döngü kuruyor Product.fromObject(result[i]) ile her bir eleman Product.fromObject kullanılarak normal verilere çevriliyor
+
+insert = Product türünde işlem yaparak tabloya veri eklemeye yarıyor. Eklerken toMap fonksiyonunu kullanarak dict veri tipine çevirerek işlem yapıyor
+
+update = Product türünde işlem yaparak verileri güncellemeye yarıyor. Güncellerken toMap fonksiyonunu kullanarak dict türünde işlem yapıyor ve güncellerken gönderilen verinin id sini kullanarak sadece gönderilen verininin güncellenmesini sağlıyor
+
+delete = int id türünde bir veri yollayarak yollanan id ye sahip verinin silinmesi sorgusunu çalıştırıyor
+							
+							2. video
+product_list.dart dosyası oluşturup şekillendirdik. initState adlı fonksiyonu kullanarak sayfa açıldığında yapılacak işlemleri yazdık yani sayfa açıldığında dbHelper.dart dosyasındaki getProduct fonksiyonunu bir değişkene atadık. bu değişken çalıştığında gelen veriyi products dizisine eşleştirdik ve verileri yükledik
+
+							3. video
+
+product_add.dart dosyası oluşturup şekillendirdik. TextField widgeti ile veri girişi sağladık TextEditingController ile her veri için ayrı ayrı kayıt nesnesi oluşturduk. buildTextField fonksiyonu ile açıklama ve TextEditingController nesnelerini kullanarak açıklama yazdırdık ve verileri ilgili kayıt nesnesine kaydettik. buildSaveButton fonksiyonu ile Buton oluşturup içindeki addProduct ile verileri dbHelperdaki insert fonksiyonunu kullanarak verileri ilgili sütunlara kaydettik ve ana sayfaya geri döndük
+ayrıca product_list içine goToProductAdd fonksiyonu ekleyerek ProductAdd classına ulaştık ve bu işlem sonuç olarak true ya da false döndürüyor. eğer işlem null değilse yani işlem yapılmışsa işlemin başarıyla yapıldığına yani değerin true olup olmadığına bakılıyor. Değer true ise getProducts isimli fonksiyon çalışıyor. 
+getProducts fonksiyonu ise dbHelper içindeki getProducts fonksiyonunu bir değişkene atayıp sonra gelen veriyi listeye verip liste uzunluğunu productCount isimli değişkene atıyor bu değişken de ekranda kaç tane verinin listeleneceğini belirliyor.
+
+							4. video
+
+product.detail.dart dosyası oluşturup şekillendirdik. Product nesnesini constructor ile buraya aktarıp kullandık. Dbhelper classını da import ettik. actions ekleyip PopupMenuButton ekleyip Options özelliklerine sahip olmasını sağladık. itemBuilder kurarak telefonun sağ üst köşesine 2 tane farklı buton ekledik. Bunlara value vererek kullanılması sağlandı.
+selectProcess isimli fonksiyona value değerini göndererek filtreleyip buna göre dbHelperdaki fonksiyonların çalışması sağlandı.
+Ayrıca ben 3. videoda yapılan TextField yerine BuildTextField kullandım böylece doğrulama ekledim. fonksiyondaki validatörün nasıl çalıştığını çok anlamadım ama neyse... eklediğim şeyler product_validation.dart, Form widgeti, ve _productFormKey adlı değişken.
+
+							5. video
+
+product_detail.dart dosyasında buildProductDetail fonksiyonunu product_add dosyasındaki scaffolddan doldurduk buildTextField fonksiyonunu da dızladık, txtName,txtDescription,txtUnitPrice nesnelerini de çaldık :D. initState fonksiyonu kullanarak txt.. içlerini product nesneleri ile doldurduk. ekranın sağ üstündeki güncelleme butonunu da işlevli hale getirerek dbHelper içindeki update methodunu çağırdık. Içine Product.withId constructorunu vererek içine txtName,txtDescription,txtUnitPrice ile doldurduk.
+
+
+							--Sonuc--
+
+Gayet iyi çalışıyo
+

@@ -1,0 +1,47 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.firebaseanketdemoapp"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.firebaseanketdemoapp"
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        multiDexEnabled = true
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')  // Firebase BoM
+    implementation 'com.google.firebase:firebase-analytics'  // Firebase Analytics
+    implementation 'com.google.firebase:firebase-firestore'  // Firestore
+}
+
+apply plugin: 'com.google.gms.google-services'  // Google Services Plugin
+
+flutter {
+    source = "../.."
+}

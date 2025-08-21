@@ -1,0 +1,6 @@
+seçilen değerin ekrana yazması için statefull widget kullanıldı ve setState fonksiyonu içine yazılan değerlerin sürekli değişmesi sağlandı
+statelesswidget yazısına 2 kere tıklayıp ampüle tıklayınca statefulle çevirilebiliyo
+
+3 tane buton yan yana row ile eklendi
+
+öğrenci listesini statefullwidget içine koyduk ve delete butonuna remove ekleyerek listeden silinmesini sağladık

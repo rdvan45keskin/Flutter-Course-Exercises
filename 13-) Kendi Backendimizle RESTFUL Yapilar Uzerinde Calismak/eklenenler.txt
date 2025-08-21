@@ -1,0 +1,37 @@
+						--1. video--
+
+db.json dosyası ekledik ve jsonplaceholder.typicode.com üzerindeki adımları yaptık.
+json-server --watch db.json bu kodla api çalıştırıyoz
+
+						--2. video--
+
+product ve category classları oluşturup constructorlarını ve dönüşümlerini yazdık
+
+						--3. video--
+
+product_api ve categort_api isminde 2 dosya oluşturup apileri getirdik
+
+						--4. video--
+
+screens adlı klasör oluşturup içinde ana ekran dosyası oluşturduk. SingleChildScrollViev ile yana doğru kaydırma yapmayı sağladık
+
+						--5. video--
+
+Category türünde categories adlı boş liste, Widget türünde categoryWidgets adında boş bir liste tanımladık. initState içine uygulama başlar başlamaz getCategoriesFromApi isimli bir fonksiyon tanımladık.Kısaca jsondan dönüştürüp bir listeye atadık ve listedeki her kategoriyi butonlara atadık
+
+getCategoriesFromApi() => CategoryApi içindeki getCategories adlı fonksiyonu çalıştırıp gelen dataları setState içinde sürekli güncellenecek bir şekilde gelen json formatını dict formatına çevirip list içine attık. sonra her list içeriğini jsondan kategory nesnesine çevirip categories listesini doldurduk. En sonda da getCategoryWidgets() fonksiyonunu çağırdık.
+
+getCategoryWidgets() => for döngüsüyle baştan categories listesinin boyutu kadar categoryWidgets içine getCategoryWidget içine yollanan categories'in i. elamanını yolluyoz
+
+getCategoryWidget(Category category) => Category türünde parametre verip içinde textButton döndüren bir fonksiyon. Bu fonksiyona yollanan category değerini tek tek butonun ismine atıyoruz
+
+						--6. video--
+
+boş bir products listesi oluşturduk getProductsByCategoryId(category) adlı fonksiyon oluşturduk ve butonlara tıklandığında çalıştırdık getProductsByCategoryId(category) içinde kategoriId ye göre products listesini doldurduk yani
+Ürünleri kategorilerine göre ayırdık. Product_list_widget isimli dosya oluşturup StatefulWidgetten extend ettik ve içinde products listesini kullandık ve bu dosyada her bir products listesi elemanınının ismini tek tek liste şeklinde ekranda yazdırdık
+
+						--7. video--
+
+product_list_vidget.dart içindeki buildProductList içinde ızgara biçiminde ekranda listeyi yazdırdık. her elemanı da ProductListRowWidget içine yollayarak bilgilerini aldık
+ProductListRowWidget statelesswidget extends ettik ve içine constructorunun tanımladık product nesnesinin özelliklerini alarak product ile çalışabilmesini sağladık. bu classın içinde buildProductItemCard isimli widget fonksiyonuyla da her bir product elemanının özelliklerini yazdırdık. Resim, isim ve fiyatını yazdırdık. ve main_screen.dart dosyasında getProducts isimli bir fonksiyon oluşturup initState içinde çağırarak uygulama başladığı anda tüm listenin gelmesini sağladık
+
