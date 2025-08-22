@@ -1,7 +1,7 @@
 # 📱 Flutter & Dart Eğitim Çalışmaları
 
 Bu repo, Flutter ve Dart öğrenme sürecimde yaptığım dersler, örnekler ve uygulama çalışmalarını içermektedir.  
-Her klasör, belirli bir konuyu kapsamaktadır. 🚀
+Her klasör, belirli bir konuyu kapsamaktadır.
 
 ---
 
